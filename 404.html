@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>页面走丢了 — qiuyuxu.me</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .oops{
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .oops .card{ max-width: 520px; padding: 54px 40px; }
+  .oops .code{
+    font-family: var(--serif);
+    font-size: 4.6rem;
+    line-height: 1;
+    color: var(--green-300);
+    letter-spacing: .06em;
+  }
+  .oops h1{
+    font-size: 1.7rem;
+    color: var(--green-900);
+    margin: 14px 0 12px;
+  }
+  .oops p{ color: var(--ink-soft); font-size: .96rem; }
+  .oops .btn{ margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="bg-layer" aria-hidden="true"><img src="assets/bg.jpg" alt="" onload="this.classList.add('is-ready')"></div>
+<div class="bg-veil" aria-hidden="true"></div>
+
+<main class="oops">
+  <div class="card">
+    <p class="code">404</p>
+    <h1>这里没有花，只有绿</h1>
+    <p>你要找的页面不存在，或者已经被我搬走了。不如回到首页重新看看？</p>
+    <a class="btn btn-solid" href="/">回到首页</a>
+  </div>
+</main>
+</body>
+</html>
