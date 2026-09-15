@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Qiuyu Xu — 个人主页</title>
+<meta name="description" content="Qiuyu Xu 的个人主页 —— 设计、写作与代码。以梵高《白玫瑰》为背景的一方安静角落。">
+<meta name="author" content="Qiuyu Xu">
+<meta name="theme-color" content="#9BC4A6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Qiuyu Xu — 个人主页">
+<meta property="og:description" content="设计、写作与代码。">
+<meta property="og:url" content="https://qiuyuxu.me/">
+<meta property="og:image" content="https://qiuyuxu.me/assets/bg.jpg">
+<link rel="canonical" href="https://qiuyuxu.me/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B8C6A'/%3E%3Ccircle cx='16' cy='13' r='5' fill='%23FBFAF4'/%3E%3Cpath d='M16 18v9M16 22l-4-3M16 24l4-3' stroke='%23FBFAF4' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/bg-placeholder.jpg" fetchpriority="high">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 固定背景层：占位图先上，真图加载后淡入 -->
+<div class="bg-layer" aria-hidden="true">
+  <img id="bgImage" src="assets/bg.jpg" alt="">
+</div>
+<div class="bg-veil" aria-hidden="true"></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- 滚动进度 -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- 导航 -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Qiuyu Xu</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#about">关于</a>
+      <a href="#works">作品</a>
+      <a href="#writing">写字</a>
+      <a href="#contact">联系</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <p class="eyebrow" data-reveal>qiuyuxu.me</p>
+      <h1 class="hero-title" data-reveal>
+        <span class="line">你好，我是</span>
+        <span class="line accent">Qiuyu&nbsp;Xu</span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        一枚安静的手艺人 —— 做一点设计，写一点字，敲一点代码。
+        把日子过得像这幅画：绿得通透，白得干净。
+      </p>
+      <div class="hero-tags" data-reveal>
+        <span class="tag">设计</span>
+        <span class="tag">写作</span>
+        <span class="tag">代码</span>
+      </div>
+      <div class="hero-cta" data-reveal>
+        <a class="btn btn-solid" href="#works">看看作品</a>
+        <a class="btn btn-ghost" href="#contact">和我聊聊</a>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#about" aria-label="向下滚动">
+      <span class="mouse" aria-hidden="true"><i></i></span>
+      <span class="hint-text">向下滚动</span>
+    </a>
+  </section>
+
+  <!-- 关于 -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="sec-num">01</p>
+        <h2 class="sec-title">关于我</h2>
+        <p class="sec-desc">一点点自我介绍，和一些我在意的事。</p>
+      </header>
+
+      <div class="about-grid">
+        <article class="card card-lead" data-reveal>
+          <p>
+            大多数时间，我在屏幕前把模糊的想法一点点磨成能用的东西。
+            喜欢结构清楚的设计、不啰嗦的文字，和那种一眼看不出打磨痕迹的原稿。
+          </p>
+          <p>
+            我喜欢梵高笔下的花 —— 不精致，但有力气。这幅《白玫瑰》是我主页的背景，
+            它提醒我：热闹的绿里，也要留得住一朵白。
+          </p>
+          <p class="muted">如果我的东西让你觉得舒服，欢迎写信给我。</p>
+        </article>
+
+        <aside class="card card-side" data-reveal>
+          <h3 class="card-title">正在做的事</h3>
+          <ul class="facts">
+            <li><span class="dot"></span><b>主攻</b> 产品设计与前端实现</li>
+            <li><span class="dot"></span><b>在学</b> 字体排印 · 插画</li>
+            <li><span class="dot"></span><b>在读</b> 梵高书信全集</li>
+            <li><span class="dot"></span><b>常驻</b> 中国 · 某座有树的城市</li>
+          </ul>
+          <div class="side-stats">
+            <div><strong>8</strong><span>年经验</span></div>
+            <div><strong>40+</strong><span>个上线项目</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section class="section" id="works">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="sec-num">02</p>
+        <h2 class="sec-title">作品</h2>
+        <p class="sec-desc">挑了几件还算拿得出手的，按时间由近及远。</p>
+      </header>
+
+      <div class="works-grid">
+        <article class="card work" data-reveal>
+          <div class="work-cover cover-a" aria-hidden="true"><span>01</span></div>
+          <div class="work-body">
+            <p class="work-meta">产品设计 · 2026</p>
+            <h3 class="work-title">青苔笔记</h3>
+            <p class="work-desc">给写作者用的极简笔记工具，去掉一切不必要的声音。从交互原型做到前端上线。</p>
+            <ul class="work-tags"><li>Figma</li><li>TypeScript</li><li>设计系统</li></ul>
+          </div>
+        </article>
+
+        <article class="card work" data-reveal>
+          <div class="work-cover cover-b" aria-hidden="true"><span>02</span></div>
+          <div class="work-body">
+            <p class="work-meta">品牌 · 2025</p>
+            <h3 class="work-title">白露茶室</h3>
+            <p class="work-desc">一间小茶室的整套视觉：标志、包装与线上预约页，把东方留白做成可用的界面。</p>
+            <ul class="work-tags"><li>品牌识别</li><li>包装</li><li>网站</li></ul>
+          </div>
+        </article>
+
+        <article class="card work" data-reveal>
+          <div class="work-cover cover-c" aria-hidden="true"><span>03</span></div>
+          <div class="work-body">
+            <p class="work-meta">开源 · 2025</p>
+            <h3 class="work-title">Palette</h3>
+            <p class="work-desc">一个从图片里取色并直接生成 CSS 变量的命令行小工具，被不少朋友用在项目起步阶段。</p>
+            <ul class="work-tags"><li>Node.js</li><li>命令行</li><li>开源</li></ul>
+          </div>
+        </article>
+
+        <article class="card work" data-reveal>
+          <div class="work-cover cover-d" aria-hidden="true"><span>04</span></div>
+          <div class="work-body">
+            <p class="work-meta">写作 · 2024</p>
+            <h3 class="work-title">在绿色的房间里</h3>
+            <p class="work-desc">一组关于颜色与情绪的随笔，写给同样会被一幅画绊住脚步的人。</p>
+            <ul class="work-tags"><li>随笔</li><li>编辑设计</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 写字 -->
+  <section class="section" id="writing">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="sec-num">03</p>
+        <h2 class="sec-title">写字</h2>
+        <p class="sec-desc">不定期更新，想到什么写什么。</p>
+      </header>
+
+      <ul class="posts card" data-reveal>
+        <li>
+          <a href="#writing">
+            <time datetime="2026-08-20">2026.08.20</time>
+            <h3>为什么我又把背景换成了一幅画</h3>
+            <p>关于渐变、纹理，以及屏幕为什么需要一点手作感。</p>
+          </a>
+        </li>
+        <li>
+          <a href="#writing">
+            <time datetime="2026-06-11">2026.06.11</time>
+            <h3>把设计系统当作一种语言来写</h3>
+            <p>命名不是后勤工作，它就是设计本身。</p>
+          </a>
+        </li>
+        <li>
+          <a href="#writing">
+            <time datetime="2026-03-02">2026.03.02</time>
+            <h3>梵高的绿，和他的白</h3>
+            <p>读《亲爱的提奥》，谈颜色如何替人说出说不出口的话。</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section section-last" id="contact">
+    <div class="wrap">
+      <div class="card contact-card" data-reveal>
+        <p class="sec-num">04</p>
+        <h2 class="contact-title">保持联系</h2>
+        <p class="contact-desc">
+          合作、约稿，或者只是想聊聊某幅画 —— 都可以写信给我，我通常会在两天内回复。
+        </p>
+        <a class="mail" href="mailto:hello@qiuyuxu.me">hello@qiuyuxu.me</a>
+        <div class="socials">
+          <a href="https://qiuyuxu.me" rel="noopener" target="_blank">博客</a>
+          <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
+          <a href="https://x.com/" rel="noopener" target="_blank">X</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Qiuyu Xu · <a href="https://qiuyuxu.me">qiuyuxu.me</a></p>
+    <p class="credit">
+      背景画作：Vincent van Gogh, <i>Roses</i>, 1890（公有领域）
+    </p>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
